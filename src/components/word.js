@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     bottom: 0;
     padding: 1rem;
     width: 100%;
-    background-color: #33333333;
+    background-color: #111;
     display: flex;
     justify-content: center;
     align-items: stretch;

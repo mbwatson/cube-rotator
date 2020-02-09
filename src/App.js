@@ -14,7 +14,7 @@ const Scene = styled.div`
     transform: translate(-50%, -50%);
     height: ${ LENGTH };
     width: ${ LENGTH };
-    border: 1px solid #eee;
+    border: 1px solid #555;
     perspective: 1000px;
 `
 
@@ -81,11 +81,11 @@ const App = () => {
             <Scene>
                 <Cube style={ animation }>
                     <Face color="white" style={{ transform: `rotateY(0deg) translateZ(calc(${ LENGTH } / 2))` }}>FRONT</Face>
-                    <Face color="cyan" style={{ transform: `rotateY(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>RIGHT</Face>
+                    <Face color="peachpuff" style={{ transform: `rotateY(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>RIGHT</Face>
                     <Face color="coral" style={{ transform: `rotateY(90deg) translateZ(calc(${ LENGTH } / 2))` }}>LEFT</Face>
                     <Face color="darkcyan" style={{ transform: `rotateY(180deg) translateZ(calc(${ LENGTH } / 2))` }}>BACK</Face>
-                    <Face color="rebeccapurple" style={{ transform: `rotateX(90deg) translateZ(calc(${ LENGTH } / 2))` }}>TOP</Face>
-                    <Face color="cornflowerblue" style={{ transform: `rotateX(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>BOTTOM</Face>
+                    <Face color="powderblue" style={{ transform: `rotateX(90deg) translateZ(calc(${ LENGTH } / 2))` }}>TOP</Face>
+                    <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>BOTTOM</Face>
                 </Cube>
             </Scene>
             <Word>w = { word }</Word>

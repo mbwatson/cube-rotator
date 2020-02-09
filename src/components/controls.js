@@ -3,10 +3,9 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
 display: block;
-    background-color: floralwhite;
+    background-color: coral;
     cursor: pointer;
-    padding: 1rem;
-    font-size: 120%;
+    padding: 0.5rem;
     font-style: italic;
     margin: 0;
     font-weight: bold;
