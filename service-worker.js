@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/cube-rotator/precache-manifest.cdcc0e12d247e6024d8deb3a1f4562dc.js"
+  "/cube-rotator/precache-manifest.5e3d1498f2b25b184b885b828a70d582.js"
 );
 
 self.addEventListener('message', (event) => {
