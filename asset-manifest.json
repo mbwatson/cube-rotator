@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/cube-rotator/static/css/main.42aa9447.chunk.css",
-    "main.js": "/cube-rotator/static/js/main.8203e8db.chunk.js",
-    "main.js.map": "/cube-rotator/static/js/main.8203e8db.chunk.js.map",
+    "main.js": "/cube-rotator/static/js/main.619d3ecc.chunk.js",
+    "main.js.map": "/cube-rotator/static/js/main.619d3ecc.chunk.js.map",
     "runtime-main.js": "/cube-rotator/static/js/runtime-main.7ae077df.js",
     "runtime-main.js.map": "/cube-rotator/static/js/runtime-main.7ae077df.js.map",
-    "static/js/2.1804631f.chunk.js": "/cube-rotator/static/js/2.1804631f.chunk.js",
-    "static/js/2.1804631f.chunk.js.map": "/cube-rotator/static/js/2.1804631f.chunk.js.map",
+    "static/js/2.425daf28.chunk.js": "/cube-rotator/static/js/2.425daf28.chunk.js",
+    "static/js/2.425daf28.chunk.js.map": "/cube-rotator/static/js/2.425daf28.chunk.js.map",
     "index.html": "/cube-rotator/index.html",
-    "precache-manifest.a535bc454a57161b87463907dc54e95c.js": "/cube-rotator/precache-manifest.a535bc454a57161b87463907dc54e95c.js",
+    "precache-manifest.cdcc0e12d247e6024d8deb3a1f4562dc.js": "/cube-rotator/precache-manifest.cdcc0e12d247e6024d8deb3a1f4562dc.js",
     "service-worker.js": "/cube-rotator/service-worker.js",
     "static/css/main.42aa9447.chunk.css.map": "/cube-rotator/static/css/main.42aa9447.chunk.css.map",
-    "static/js/2.1804631f.chunk.js.LICENSE.txt": "/cube-rotator/static/js/2.1804631f.chunk.js.LICENSE.txt"
+    "static/js/2.425daf28.chunk.js.LICENSE.txt": "/cube-rotator/static/js/2.425daf28.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7ae077df.js",
-    "static/js/2.1804631f.chunk.js",
+    "static/js/2.425daf28.chunk.js",
     "static/css/main.42aa9447.chunk.css",
-    "static/js/main.8203e8db.chunk.js"
+    "static/js/main.619d3ecc.chunk.js"
   ]
 }
