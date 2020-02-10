@@ -15,7 +15,6 @@ const Wrapper = styled.div`
     min-height: 4rem;
     font-family: serif;
     font-size: 120%;
-    font-style: italic;
     display: flex;
     justify-content: center;
     align-items: center;
