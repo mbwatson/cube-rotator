@@ -1,12 +1,4 @@
 import styled from 'styled-components'
-import { animated } from 'react-spring'
-
-export const Cube = styled(animated.div)`
-    height: 100%;
-    width: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-`
 
 export const Face = styled.div`
     position: absolute;

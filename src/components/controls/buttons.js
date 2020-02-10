@@ -1,11 +1,9 @@
-import React from 'react'
 import styled from 'styled-components'
 
 export const Button = styled.button`
-display: block;
     background-color: coral;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 0;
     font-style: italic;
     margin: 0;
     font-weight: bold;
@@ -13,7 +11,23 @@ display: block;
     border: 1px solid #00000033;
     transition: filter 250ms;
     &:hover {
-        filter: brightness(0.95);
+        filter: brightness(0.8);
+    }
+`
+
+export const ActionButton = styled(Button)`
+    padding: 0 1rem;
+`
+
+export const ResetButton = styled(Button)`
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: transparent;
+    border: 0;
+    transition: filter 250ms;
+    &:hover {
+        filter: brightness(0.8);
     }
 `
 
@@ -28,19 +42,3 @@ export const ButtonGroup = styled.div`
         width: 100%;
     }
 `
-
-const Wrapper = styled.div`
-    // background-color: #33333333;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    padding: 1rem;
-`
-
-export const ControlPanel = ({ children }) => {
-    return (
-        <Wrapper>
-            { children }      
-        </Wrapper>
-    )
-}

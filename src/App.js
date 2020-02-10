@@ -1,21 +1,21 @@
-import React, { Fragment, useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useSpring } from 'react-spring'
-import { ControlPanel, ButtonGroup, Button } from './components/controls'
-import { Cube, Face } from './components/cube'
+import { ControlPanel } from './components/controls'
+import { Cube } from './components/cube'
 import { Word } from './components/word'
+import { Header, Main, Footer } from './components/layout'
 
-const LENGTH = '300px'
+const SIDE_LENGTH = '300px'
 
-const Scene = styled.div`
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: ${ LENGTH };
-    width: ${ LENGTH };
-    border: 1px solid #555;
-    perspective: 1000px;
+const Wrapper = styled.div`
+    // border: 1px solid #f99; & * { border: 1px solid #f99; }
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(30deg, steelblue, darkslategray);
 `
 
 const App = () => {
@@ -26,7 +26,7 @@ const App = () => {
 
     const animation = useSpring({
         transform: `
-            translateZ(calc(-${ LENGTH } / 2))
+            translateZ(calc(-${ SIDE_LENGTH } / 2))
             rotateX(${ rotationX }deg)
             rotateY(${ rotationY }deg)
             rotateZ(${ rotationZ }deg)
@@ -60,36 +60,26 @@ const App = () => {
     }
 
     return (
-        <Fragment>
-            <ControlPanel>
-                <ButtonGroup>
-                    <Button onClick={ handleRotateX(1) }>x</Button>
-                    <Button onClick={ handleRotateX(-1) }>x^-</Button>
-                </ButtonGroup>
-                <ButtonGroup>
-                    <Button onClick={ handleRotateY(1) }>y</Button>
-                    <Button onClick={ handleRotateY(-1) }>y^-</Button>
-                </ButtonGroup>
-                <ButtonGroup>
-                    <Button onClick={ handleRotateZ(1) }>z</Button>
-                    <Button onClick={ handleRotateZ(-1) }>z^-</Button>
-                </ButtonGroup>
-                <ButtonGroup>
-                    <Button onClick={ handleResetRotation }>RESET</Button>
-                </ButtonGroup>
-            </ControlPanel>
-            <Scene>
-                <Cube style={ animation }>
-                    <Face color="white" style={{ transform: `rotateY(0deg) translateZ(calc(${ LENGTH } / 2))` }}>FRONT</Face>
-                    <Face color="peachpuff" style={{ transform: `rotateY(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>RIGHT</Face>
-                    <Face color="coral" style={{ transform: `rotateY(90deg) translateZ(calc(${ LENGTH } / 2))` }}>LEFT</Face>
-                    <Face color="darkcyan" style={{ transform: `rotateY(180deg) translateZ(calc(${ LENGTH } / 2))` }}>BACK</Face>
-                    <Face color="powderblue" style={{ transform: `rotateX(90deg) translateZ(calc(${ LENGTH } / 2))` }}>TOP</Face>
-                    <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>BOTTOM</Face>
-                </Cube>
-            </Scene>
-            <Word word={ word } />
-        </Fragment>
+        <Wrapper>
+            
+            <Header>
+                <ControlPanel
+                    xRotationHandler={ handleRotateX }
+                    yRotationHandler={ handleRotateY }
+                    zRotationHandler={ handleRotateZ }
+                    resetHandler={ handleResetRotation }
+                />
+            </Header>
+
+            <Main>
+                <Cube sideLength={ SIDE_LENGTH } animation={ animation } />
+            </Main>
+            
+            <Footer>
+                <Word word={ word } />
+            </Footer>
+
+        </Wrapper>
     )
 }
 
