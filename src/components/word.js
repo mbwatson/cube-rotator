@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import MathJax from 'react-mathjax-preview'
 
 const Wrapper = styled.div`
     position: fixed;
@@ -20,10 +21,11 @@ const Wrapper = styled.div`
     align-items: center;
 `
 
-export const Word = ({ children }) => {
+export const Word = ({ word }) => {
+
     return (
         <Wrapper>
-            { children }
+            <MathJax math={ '$$w = ' + word + '$$' } />
         </Wrapper>
     )
 }

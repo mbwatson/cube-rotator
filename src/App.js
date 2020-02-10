@@ -88,7 +88,7 @@ const App = () => {
                     <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ LENGTH } / 2))` }}>BOTTOM</Face>
                 </Cube>
             </Scene>
-            <Word>w = { word }</Word>
+            <Word word={ word } />
         </Fragment>
     )
 }
