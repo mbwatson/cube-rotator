@@ -5,7 +5,7 @@ import { ControlPanel } from './components/controls'
 import { Cube } from './components/cube'
 import { Word } from './components/word'
 import { Header, Main, Footer } from './components/layout'
-
+import { AxisKey } from './components/axis-key'
 const SIDE_LENGTH = '300px'
 
 const Wrapper = styled.div`
@@ -63,6 +63,8 @@ const App = () => {
         <Wrapper>
             
             <Header>
+                <AxisKey />
+                
                 <ControlPanel
                     xRotationHandler={ handleRotateX }
                     yRotationHandler={ handleRotateY }
@@ -70,6 +72,7 @@ const App = () => {
                     resetHandler={ handleResetRotation }
                 />
             </Header>
+            
 
             <Main>
                 <Cube sideLength={ SIDE_LENGTH } animation={ animation } />
