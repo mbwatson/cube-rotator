@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1cbb972094e56cc1606f60dcbbb8b7a0",
+    "revision": "b006c06dac318da0a2592c61653fcd23",
     "url": "/cube-rotator/index.html"
   },
   {
-    "revision": "727836a82cb19a44e6f5",
+    "revision": "c6cbd672439fd39b9bed",
     "url": "/cube-rotator/static/css/main.42aa9447.chunk.css"
   },
   {
-    "revision": "262291ea9441f0a08854",
-    "url": "/cube-rotator/static/js/2.170e7e1b.chunk.js"
+    "revision": "3c07ae1f18ee860ccab8",
+    "url": "/cube-rotator/static/js/2.e1104174.chunk.js"
   },
   {
     "revision": "928d7b5eb39d16fe9a880722c974b51e",
-    "url": "/cube-rotator/static/js/2.170e7e1b.chunk.js.LICENSE.txt"
+    "url": "/cube-rotator/static/js/2.e1104174.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "727836a82cb19a44e6f5",
-    "url": "/cube-rotator/static/js/main.4925972a.chunk.js"
+    "revision": "c6cbd672439fd39b9bed",
+    "url": "/cube-rotator/static/js/main.276546e0.chunk.js"
   },
   {
     "revision": "093260720ed10cf10557",
