@@ -5,8 +5,25 @@ import { ControlPanel } from './components/controls'
 import { Cube } from './components/cube'
 import { Word } from './components/word'
 import { Header, Main, Footer } from './components/layout'
+import { InfoIcon, UndoIcon } from './components/icons'
+import { Button } from './components/button'
+import { Modal } from './components/modal'
 import { AxisKey } from './components/axis-key'
+
 const SIDE_LENGTH = '250px'
+
+export const HeaderButton = styled(Button)`
+    background-color: transparent;
+    border: 0;
+    padding: 1rem;
+    width: 4rem;
+    height: 4rem;
+    transition: filter 250ms, background-color 250ms;
+    &:hover {
+        filter: brightness(0.8);
+        background-color: #ffffff22;
+    }
+`
 
 const Wrapper = styled.div`
     // border: 1px solid #f99; & * { border: 1px solid #f99; }
@@ -14,7 +31,6 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     background: linear-gradient(30deg, steelblue, darkslategray);
 `
 
@@ -23,6 +39,8 @@ const App = () => {
     const [yRotation, setYRotation] = useState(0)
     const [zRotation, setZRotation] = useState(0)
     const [word, setWord] = useState('')
+    const [modalVisibility, setModalVisibility] = useState(false)
+
     const animationConfig = { mass: 1, tension: 200, friction: 20, }
 
     const xAnimation = useSpring({ transform: `rotateX(${ xRotation }deg)`, config: animationConfig })
@@ -47,7 +65,7 @@ const App = () => {
         setWord(word => word + newChar)
     }
 
-    const handleResetRotation= () => {
+    const handleResetRotation = () => {
         setXRotation(0)
         setYRotation(0)
         setZRotation(0)
@@ -56,9 +74,29 @@ const App = () => {
 
     return (
         <Wrapper>
-            
+            <Modal
+                title="Modal Title"
+                isVisible={ modalVisibility }
+                closeHandler={ () => setModalVisibility(false) }
+            >
+                <p>
+                    Use the buttons to rotate the cube.
+                    The rotation $x$, $y$, and $z$ perform are rotations about the corresponding axes following the right-hand rule.
+                    The inverses, $x^-$, $y^-$, and $z^-$, rotate the cube in the opposite direction.
+                </p>
+                <p>
+                    Note that the orientation of the axes depicted below.
+                </p>
+
+                <div style={{ textAlign: 'center' }}>
+                    <AxisKey />
+                </div>
+            </Modal>
+
             <Header>
+                <HeaderButton onClick={ () => setModalVisibility(true) }><InfoIcon size="32" fill="coral" /></HeaderButton>
                 <Word word={ word } />
+                <HeaderButton onClick={ handleResetRotation }><UndoIcon size="32" fill="coral"/></HeaderButton>
             </Header>
 
             <Main>

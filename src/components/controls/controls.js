@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import MathJax from 'react-mathjax-preview'
 import { texify } from '../../utils'
-import { UndoIcon } from '../icons'
-import { ButtonGroup, ActionButton, ResetButton } from './buttons'
+import { Button } from '../button'
 
 const Wrapper = styled.div`
     // border: 1px solid #f99; * { border: 1px solid #f99; }
@@ -14,6 +13,27 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: stretch;
+`
+
+export const ActionButton = styled(Button)`
+    background-color: coral;
+    padding: 0;
+    & .MathJax {
+        pointer-events: none;
+    }
+`
+
+export const ButtonGroup = styled.div`
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    & ${ Button } {
+        height: 100%;
+        width: 100%;
+    }
 `
 
 export const ControlPanel = ({ children, xRotationHandler, yRotationHandler, zRotationHandler, resetHandler }) => {
@@ -31,7 +51,6 @@ export const ControlPanel = ({ children, xRotationHandler, yRotationHandler, zRo
                 <ActionButton onClick={ zRotationHandler(1) }><MathJax math={ texify('z') } /></ActionButton>
                 <ActionButton onClick={ zRotationHandler(-1) }><MathJax math={ texify('z^-') } /></ActionButton>
             </ButtonGroup>
-            <ResetButton onClick={ resetHandler }><UndoIcon size="32" fill="coral"/></ResetButton>
         </Wrapper>
     )
 }

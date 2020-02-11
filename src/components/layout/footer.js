@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Footer = styled.header`
+export const Footer = styled.footer`
     background-color: transparent;
     width: 100%;
     display: flex;
