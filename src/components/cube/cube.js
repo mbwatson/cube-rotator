@@ -20,27 +20,21 @@ const Rotator = styled(animated.div)`
     transform-style: preserve-3d;
 `
 
-const XRotator = styled(Rotator)``
-
-const YRotator = styled(Rotator)``
-
-const ZRotator = styled(Rotator)``
-
 export const Cube = ({ sideLength, xAnimation, yAnimation, zAnimation }) => {
     return (
         <Scene sideLength={ sideLength }>
-            <ZRotator style={ zAnimation }>
-                <YRotator style={ yAnimation }>
-                    <XRotator style={ xAnimation }>
+            <Rotator style={ zAnimation }>
+                <Rotator style={ yAnimation }>
+                    <Rotator style={ xAnimation }>
                         <Face color="white" style={{ transform: `rotateY(0deg) translateZ(calc(${ sideLength } / 2))` }}>FRONT</Face>
                         <Face color="peachpuff" style={{ transform: `rotateY(-90deg) translateZ(calc(${ sideLength } / 2))` }}>RIGHT</Face>
                         <Face color="salmon" style={{ transform: `rotateY(90deg) translateZ(calc(${ sideLength } / 2))` }}>LEFT</Face>
                         <Face color="darkcyan" style={{ transform: `rotateY(180deg) translateZ(calc(${ sideLength } / 2))` }}>BACK</Face>
                         <Face color="powderblue" style={{ transform: `rotateX(90deg) translateZ(calc(${ sideLength } / 2))` }}>TOP</Face>
                         <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ sideLength } / 2))` }}>BOTTOM</Face>
-                    </XRotator>
-                </YRotator>
-            </ZRotator>
+                    </Rotator>
+                </Rotator>
+            </Rotator>
         </Scene>
     )
 }
