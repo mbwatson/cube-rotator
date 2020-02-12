@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/cube-rotator/static/css/main.42aa9447.chunk.css",
-    "main.js": "/cube-rotator/static/js/main.5d1099fe.chunk.js",
-    "main.js.map": "/cube-rotator/static/js/main.5d1099fe.chunk.js.map",
+    "main.js": "/cube-rotator/static/js/main.09bb17cd.chunk.js",
+    "main.js.map": "/cube-rotator/static/js/main.09bb17cd.chunk.js.map",
     "runtime-main.js": "/cube-rotator/static/js/runtime-main.7ae077df.js",
     "runtime-main.js.map": "/cube-rotator/static/js/runtime-main.7ae077df.js.map",
     "static/js/2.c90e0063.chunk.js": "/cube-rotator/static/js/2.c90e0063.chunk.js",
     "static/js/2.c90e0063.chunk.js.map": "/cube-rotator/static/js/2.c90e0063.chunk.js.map",
     "index.html": "/cube-rotator/index.html",
-    "precache-manifest.44bbd8398b57436cc1a71204a3e8a328.js": "/cube-rotator/precache-manifest.44bbd8398b57436cc1a71204a3e8a328.js",
+    "precache-manifest.d05b0649920047f647c56e48ea13f26e.js": "/cube-rotator/precache-manifest.d05b0649920047f647c56e48ea13f26e.js",
     "service-worker.js": "/cube-rotator/service-worker.js",
     "static/css/main.42aa9447.chunk.css.map": "/cube-rotator/static/css/main.42aa9447.chunk.css.map",
     "static/js/2.c90e0063.chunk.js.LICENSE.txt": "/cube-rotator/static/js/2.c90e0063.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7ae077df.js",
     "static/js/2.c90e0063.chunk.js",
     "static/css/main.42aa9447.chunk.css",
-    "static/js/main.5d1099fe.chunk.js"
+    "static/js/main.09bb17cd.chunk.js"
   ]
 }
