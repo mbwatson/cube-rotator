@@ -19,43 +19,55 @@ const Wrapper = styled.div`
 `
 
 const App = () => {
-    const [rotationX, setRotationX] = useState(0)
-    const [rotationY, setRotationY] = useState(0)
-    const [rotationZ, setRotationZ] = useState(0)
+    const [xRotation, setXRotation] = useState(0)
+    const [yRotation, setYRotation] = useState(0)
+    const [zRotation, setZRotation] = useState(0)
     const [word, setWord] = useState('')
+    const animationConfig = { mass: 1, tension: 200, friction: 20, }
 
-    const animation = useSpring({
+    const xAnimation = useSpring({
         transform: `
-            translateZ(calc(-${ SIDE_LENGTH } / 2))
-            rotateX(${ rotationX }deg)
-            rotateY(${ rotationY }deg)
-            rotateZ(${ rotationZ }deg)
+            rotateX(${ xRotation }deg)
         `,
-        config: { mass: 1, tension: 200, friction: 20, },
+        config: animationConfig,
     })
     
-    const handleRotateX = value => event => {
-        setRotationX(rotationX => rotationX + value * 90)
+    const yAnimation = useSpring({
+        transform: `
+            rotateY(${ yRotation }deg)
+        `,
+        config: animationConfig,
+    })
+    
+    const zAnimation = useSpring({
+        transform: `
+            rotateZ(${ zRotation }deg)
+        `,
+        config: animationConfig,
+    })
+    
+    const handleXRotate = value => event => {
+        setXRotation(xRotation => xRotation - value * 90)
         const newChar = value === 1 ? 'x' : 'x^-'
         setWord(word => word + newChar)
     }
 
-    const handleRotateY = value => event => {
-        setRotationY(rotationY => rotationY + value * 90)
+    const handleYRotate = value => event => {
+        setYRotation(yRotation => yRotation - value * 90)
         const newChar = value === 1 ? 'y' : 'y^-'
         setWord(word => word + newChar)
     }
 
-    const handleRotateZ = value => event => {
-        setRotationZ(rotationZ => rotationZ + value * 90)
+    const handleZRotate = value => event => {
+        setZRotation(zRotation => zRotation - value * 90)
         const newChar = value === 1 ? 'z' : 'z^-'
         setWord(word => word + newChar)
     }
 
-    const handleResetRotation = () => {
-        setRotationX(0)
-        setRotationY(0)
-        setRotationZ(0)
+    const handleResetRotation= () => {
+        setXRotation(0)
+        setYRotation(0)
+        setZRotation(0)
         setWord('')
     }
 
@@ -66,16 +78,20 @@ const App = () => {
                 <AxisKey />
                 
                 <ControlPanel
-                    xRotationHandler={ handleRotateX }
-                    yRotationHandler={ handleRotateY }
-                    zRotationHandler={ handleRotateZ }
-                    resetHandler={ handleResetRotation }
+                    xRotationHandler={ handleXRotate }
+                    yRotationHandler={ handleYRotate }
+                    zRotationHandler={ handleZRotate }
+                    resetHandler={ handleResetRotation}
                 />
             </Header>
-            
 
             <Main>
-                <Cube sideLength={ SIDE_LENGTH } animation={ animation } />
+                <Cube
+                    sideLength={ SIDE_LENGTH }
+                    xAnimation={ xAnimation }
+                    yAnimation={ yAnimation }
+                    zAnimation={ zAnimation }
+                />
             </Main>
             
             <Footer>

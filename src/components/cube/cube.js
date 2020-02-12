@@ -11,24 +11,36 @@ export const Scene = styled.div`
     perspective: 1000px;
 `
 
-export const AnimationWrapper = styled(animated.div)`
+const Rotator = styled(animated.div)`
     height: 100%;
     width: 100%;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform-style: preserve-3d;
 `
 
-export const Cube = ({ animation, sideLength }) => {
+const XRotator = styled(Rotator)``
+
+const YRotator = styled(Rotator)``
+
+const ZRotator = styled(Rotator)``
+
+export const Cube = ({ sideLength, xAnimation, yAnimation, zAnimation }) => {
     return (
         <Scene sideLength={ sideLength }>
-            <AnimationWrapper style={ animation }>
-                <Face color="white" style={{ transform: `rotateY(0deg) translateZ(calc(${ sideLength } / 2))` }}>FRONT</Face>
-                <Face color="peachpuff" style={{ transform: `rotateY(-90deg) translateZ(calc(${ sideLength } / 2))` }}>RIGHT</Face>
-                <Face color="salmon" style={{ transform: `rotateY(90deg) translateZ(calc(${ sideLength } / 2))` }}>LEFT</Face>
-                <Face color="darkcyan" style={{ transform: `rotateY(180deg) translateZ(calc(${ sideLength } / 2))` }}>BACK</Face>
-                <Face color="powderblue" style={{ transform: `rotateX(90deg) translateZ(calc(${ sideLength } / 2))` }}>TOP</Face>
-                <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ sideLength } / 2))` }}>BOTTOM</Face>
-            </AnimationWrapper>
+            <ZRotator style={ zAnimation }>
+                <YRotator style={ yAnimation }>
+                    <XRotator style={ xAnimation }>
+                        <Face color="white" style={{ transform: `rotateY(0deg) translateZ(calc(${ sideLength } / 2))` }}>FRONT</Face>
+                        <Face color="peachpuff" style={{ transform: `rotateY(-90deg) translateZ(calc(${ sideLength } / 2))` }}>RIGHT</Face>
+                        <Face color="salmon" style={{ transform: `rotateY(90deg) translateZ(calc(${ sideLength } / 2))` }}>LEFT</Face>
+                        <Face color="darkcyan" style={{ transform: `rotateY(180deg) translateZ(calc(${ sideLength } / 2))` }}>BACK</Face>
+                        <Face color="powderblue" style={{ transform: `rotateX(90deg) translateZ(calc(${ sideLength } / 2))` }}>TOP</Face>
+                        <Face color="olive" style={{ transform: `rotateX(-90deg) translateZ(calc(${ sideLength } / 2))` }}>BOTTOM</Face>
+                    </XRotator>
+                </YRotator>
+            </ZRotator>
         </Scene>
     )
 }
