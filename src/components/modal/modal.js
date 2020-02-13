@@ -2,9 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { CloseIcon } from '../icons'
 import { Button } from '../button'
-import { animated, useSpring } from 'react-spring'
 
-const Wrapper = styled(animated.div)`
+const Wrapper = styled.div`
     background-color: #eee;
     width: 90vw;
     height: 90vh;
@@ -19,6 +18,7 @@ const Wrapper = styled(animated.div)`
     display: flex;
     flex-direction: column;
     filter: drop-shadow(0 0 0.5rem #00000099);
+    transition: transform 500ms;
 `
 
 const CardPortion = styled.div`
@@ -45,6 +45,7 @@ const CloseButton = styled(Button)`
     top: 0;
     height: 100%;
     width: 4rem;
+    background-color: #eee;
 `
 
 const Body = styled(CardPortion).attrs({ as: 'article' })`
@@ -54,14 +55,8 @@ const Body = styled(CardPortion).attrs({ as: 'article' })`
 `
 
 export const Modal = ({ title, children, isVisible, closeHandler }) => {
-    const animationConfig = { mass: 1, tension: 200, friction: 20, }
-    const modalAnimation = useSpring({
-        opacity: isVisible ? '1.0' : '0.0',
-        transform: `translate(${ isVisible ? '-50%, -50%' : '-250%, -50%' })`,
-        config: animationConfig,
-    })
     return (
-        <Wrapper style={ modalAnimation }>
+        <Wrapper style={{ transform: `translate(${ isVisible ? '-50%, -50%' : '-250%, -50%' })` }}>
             <Header>
                 <Title>{ title }</Title>
                 <CloseButton onClick={ closeHandler }>
