@@ -6,7 +6,7 @@ import { Cube } from './components/cube'
 import { Word } from './components/word'
 import { Header, Main, Footer } from './components/layout'
 import { AxisKey } from './components/axis-key'
-const SIDE_LENGTH = '300px'
+const SIDE_LENGTH = '250px'
 
 const Wrapper = styled.div`
     // border: 1px solid #f99; & * { border: 1px solid #f99; }
@@ -25,27 +25,10 @@ const App = () => {
     const [word, setWord] = useState('')
     const animationConfig = { mass: 1, tension: 200, friction: 20, }
 
-    const xAnimation = useSpring({
-        transform: `
-            rotateX(${ xRotation }deg)
-        `,
-        config: animationConfig,
-    })
-    
-    const yAnimation = useSpring({
-        transform: `
-            rotateY(${ yRotation }deg)
-        `,
-        config: animationConfig,
-    })
-    
-    const zAnimation = useSpring({
-        transform: `
-            rotateZ(${ zRotation }deg)
-        `,
-        config: animationConfig,
-    })
-    
+    const xAnimation = useSpring({ transform: `rotateX(${ xRotation }deg)`, config: animationConfig })
+    const yAnimation = useSpring({ transform: `rotateY(${ yRotation }deg)`, config: animationConfig })
+    const zAnimation = useSpring({ transform: `rotateZ(${ zRotation }deg)`, config: animationConfig })
+
     const handleXRotate = value => event => {
         setXRotation(xRotation => xRotation - value * 90)
         const newChar = value === 1 ? 'x' : 'x^-'
@@ -75,14 +58,7 @@ const App = () => {
         <Wrapper>
             
             <Header>
-                <AxisKey />
-                
-                <ControlPanel
-                    xRotationHandler={ handleXRotate }
-                    yRotationHandler={ handleYRotate }
-                    zRotationHandler={ handleZRotate }
-                    resetHandler={ handleResetRotation}
-                />
+                <Word word={ word } />
             </Header>
 
             <Main>
@@ -95,7 +71,12 @@ const App = () => {
             </Main>
             
             <Footer>
-                <Word word={ word } />
+                <ControlPanel
+                    xRotationHandler={ handleXRotate }
+                    yRotationHandler={ handleYRotate }
+                    zRotationHandler={ handleZRotate }
+                    resetHandler={ handleResetRotation}
+                />
             </Footer>
 
         </Wrapper>

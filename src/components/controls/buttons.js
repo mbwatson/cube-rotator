@@ -5,6 +5,7 @@ export const Button = styled.button`
     cursor: pointer;
     padding: 0;
     font-style: italic;
+    font-size: 125%;
     margin: 0;
     font-weight: bold;
     color: #000;
@@ -16,7 +17,10 @@ export const Button = styled.button`
 `
 
 export const ActionButton = styled(Button)`
-    padding: 0 1rem;
+    padding: 0;
+    & .MathJax {
+        pointer-events: none;
+    }
 `
 
 export const ResetButton = styled(Button)`
@@ -32,11 +36,12 @@ export const ResetButton = styled(Button)`
 `
 
 export const ButtonGroup = styled.div`
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0;
     & ${ Button } {
         height: 100%;
         width: 100%;

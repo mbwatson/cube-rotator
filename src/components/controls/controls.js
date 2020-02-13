@@ -6,10 +6,14 @@ import { UndoIcon } from '../icons'
 import { ButtonGroup, ActionButton, ResetButton } from './buttons'
 
 const Wrapper = styled.div`
+    // border: 1px solid #f99; * { border: 1px solid #f99; }
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 50%;
+    }
     display: flex;
     justify-content: center;
     align-items: stretch;
-    padding: 1rem;
 `
 
 export const ControlPanel = ({ children, xRotationHandler, yRotationHandler, zRotationHandler, resetHandler }) => {
