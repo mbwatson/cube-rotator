@@ -75,7 +75,7 @@ const App = () => {
     return (
         <Wrapper>
             <Modal
-                title="Modal Title"
+                title="Help"
                 isVisible={ modalVisibility }
                 closeHandler={ () => setModalVisibility(false) }
             >
