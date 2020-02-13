@@ -31,6 +31,7 @@ export const ButtonGroup = styled.div`
     align-items: center;
     padding: 0;
     & ${ Button } {
+        min-height: 3rem;
         height: 100%;
         width: 100%;
     }
